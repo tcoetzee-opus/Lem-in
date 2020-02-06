@@ -1,6 +1,7 @@
 
 #ifndef LEM_IN_H
 # define LEM_IN_H
+# define MAXINT 2147483647
 
 # include "../libft/includes/libft.h"
 # include <stdio.h>
@@ -108,7 +109,7 @@ void				check_begin_with_l(char *str, t_lemin *l);
 void				check_for_hyphen(char **tab, t_lemin *l);
 void				check_if_name_already_exists(char **tab, t_lemin *l);
 void				which_command(t_lemin *l, int i);
-void				check_coordonates(char **tab, t_lemin *l);
+void				check_coordinates(char **tab, t_lemin *l);
 void				map_init_tab_pipes(t_lemin *l);
 void				stock_pipes(char *str, t_lemin *l);
 void				check_if_rooms_exists(t_lemin *l, char **tab);

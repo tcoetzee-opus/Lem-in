@@ -96,7 +96,7 @@ int			map_pipes_and_stock(t_lemin *l)
 			free_pipes(l, "\033[091mError: Invalid starting room\033[0m");
 		else if (ft_strcmp(l->f[i], "##end") == 0)
 			free_pipes(l, "\033[091mError: Invalid end room\033[0m");
-		else if (l->f[i][0] && l->f[i][0] == '#' &&
+		else if (l->f[i][0] && l->f[i][0] == '#' &&							/* if theres a comment or nothing or comment */
 				(!l->f[i][1] || (l->f[i][1] && l->f[i][1] != '#')))
 			i++;
 		else if (l->f[i][0] && l->f[i][0] == '#' &&

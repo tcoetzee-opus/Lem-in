@@ -1,15 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
 #include "../../includes/lem_in.h"
 
 static void	check_sum_end_start(t_lemin *l)
@@ -26,10 +15,14 @@ static void	check_sum_end_start(t_lemin *l)
 	}
 }
 
+/* 	FUNCTION			| DESC						| FILE								|
+	create_sum_tab		  Initializes sum table	&&	  algorithm/resolve_remove_useless_
+						  gets the total	    	  paths.c
+	*/
+
 void		remove_useless_paths(t_lemin *l)
 {
 	create_sum_tab(l);
-	update_sum_tab(l);
 	check_sum_end_start(l);
 	check_if_solution_exists(l);
 	bfs(l, l->room_start);

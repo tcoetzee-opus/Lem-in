@@ -1,20 +1,9 @@
 
-
-
-
-
-
-
-
-
-
-
-
 #include "../../includes/lem_in.h"
 
 static void	get_raw_data(t_lemin *l)
 {
-	l->string_file = ft_read_all_file(STDIN_FILENO);
+	l->string_file = ft_read_all_file(STDIN_FILENO);	/* returns a string */
 	if (l->string_file == NULL)
 		print_error(&ft_putendl_fd,
 				"\033[091mError reading file\033[0m",
@@ -23,7 +12,7 @@ static void	get_raw_data(t_lemin *l)
 
 static void	get_formatted_file(t_lemin *l)
 {
-	l->f = ft_strsplit_strict(l->string_file, '\n');
+	l->f = ft_strsplit_strict(l->string_file, '\n');	/* returns a 2d array */
 	if (l->f == NULL)
 	{
 		ft_memdel((void**)&l->string_file);

@@ -38,7 +38,7 @@ void		update_sum_tab(t_lemin *l)
 	while (i < l->nb_rooms)
 	{
 		while (j < l->nb_rooms)
-			total += l->pipes[i][j++];
+			total += l->pipes[i][j++];	/* Amount of pipes */
 		l->sum[i] = total;
 		total = 0;
 		j = 0;
@@ -48,9 +48,12 @@ void		update_sum_tab(t_lemin *l)
 
 void		create_sum_tab(t_lemin *l)
 {
-	l->sum = (int *)malloc(sizeof(int) * (unsigned int)(l->nb_rooms));
+	l->sum = (int *)malloc(sizeof(int) * (unsigned int)(l->nb_rooms));	/* Allocating amount of rooms */	
 	if (l->sum == NULL)
 		free_all(l);
+	else 
+		update_sum_tab(l);	
+												/* Free struct if NULL */
 }
 
 void		check_for_isolated_rooms(t_lemin *l)

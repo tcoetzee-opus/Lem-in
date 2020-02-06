@@ -12,7 +12,7 @@
 
 #include "../../includes/lem_in.h"
 
-void		check_coordonates(char **tab, t_lemin *l)
+void		check_coordinates(char **tab, t_lemin *l)
 {
 	int	ret;
 
@@ -85,16 +85,16 @@ int			check_if_room(char *str, t_lemin *l)
 	char	**tab;
 
 	tab = NULL;
-	check_begin_with_l(str, l);
-	check_is_print(str, l);
+	check_begin_with_l(str, l);	/* l error */
+	check_is_print(str, l);	/* invalid room error */
 	tab = ft_strsplit(str, ' ');
 	if (tab == NULL || tab[0] == NULL || tab[1] == NULL || tab[2] == NULL)
 		free_check_if_room(l,
 			"\033[091mError while retrieving a room\033[0m");
-	check_coordonates(tab, l);
-	check_for_hyphen(tab, l);
-	check_if_name_already_exists(tab, l);
-	stock_room_name(l, tab);
-	ft_free_double_tab((void**)tab);
+	check_coordinates(tab, l);	/* checks neg and if number */
+	check_for_hyphen(tab, l);	/* room cant contain a dash */
+	check_if_name_already_exists(tab, l);	/* self-explanatory */
+	stock_room_name(l, tab);	/* enters data into l->room variables */
+	ft_free_double_tab((void**)tab); /* free leaks */
 	return (0);
 }

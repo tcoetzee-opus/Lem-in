@@ -11,14 +11,19 @@
 
 
 #include "../../includes/lem_in.h"
-
+/* 	FUNCTION			| DESC						| FILE				|
+	init_ants 			  Initializing ant struct	  map/init.c
+	handle_arguments 	  Handles flags				  map/init.c
+	read_map			  Extracts Info from file	  map/map.c
+	remove_useless_paths  
+	*/
 int	main(int argc, char **argv)
 {
 	t_lemin	l;
 
-	init_ants(&l);
-	handle_arguments(argc, argv, &l);
-	read_map(&l);
+	init_ants(&l);						//
+	handle_arguments(argc, argv, &l);	//
+	read_map(&l);						//
 	remove_useless_paths(&l);
 	if (l.debug == 1)
 		print_debug(&l);

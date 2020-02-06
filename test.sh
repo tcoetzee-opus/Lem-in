@@ -1,2 +1,2 @@
 #!/bin/sh
-./lem-in < /Users/pr4gma/Desktop/lem-in/maps_ok/1
+./lem-in $1 < /homes/tcoetzee/Desktop/Lem-in/maps_ok/1
